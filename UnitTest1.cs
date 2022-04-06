@@ -74,18 +74,55 @@ namespace TallerOopScripting
         }
 
         [Test]
+        public void TestDestroyedCharacter()
+        {
+          
+        }
+
+        [Test]
         public void TestEquipTargetAtributte()
         {
-            
+            Equip test5equip1 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.AP, EEquipAffinity.Knight, 1);
+            Equip test5equip2 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.RP, EEquipAffinity.Knight, 1);
+            Equip test5equip3 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.ALL, EEquipAffinity.Knight, 1);
+            Equip test5equip4 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.ALL, EEquipAffinity.Knight, 1);
+
+            Character dummyCharacter1test5 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Knight);
+            Character dummyCharacter2test5 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Knight);
+            Character dummyCharacter3test5 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Knight);
+            Character dummyCharacter4test5 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Knight);
+
+            Assert.AreEqual(4, dummyCharacter1test5.EquipItem(test5equip1).Ap);
+            Assert.AreEqual(2, dummyCharacter2test5.EquipItem(test5equip2).Rp);
+            Assert.AreEqual(4, dummyCharacter3test5.EquipItem(test5equip3).Ap);
+            Assert.AreEqual(2, dummyCharacter4test5.EquipItem(test5equip4).Rp);
         }
 
        [Test]
         public void TestEquipAffinity()
         {
+            Equip test6equip1 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.RP, EEquipAffinity.Knight, 1);
+            Equip test6equip2 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.RP, EEquipAffinity.Mage, 1);
+            Equip test6equip3 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.RP, EEquipAffinity.Undead, 1);
+            Equip test6equip4 = new Equip("sajdnjf", 1, Erarity.Common, ETargetAtributte.RP, EEquipAffinity.Knight, 1);
+
+            Character dummyCharacter1test6 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Knight);
+            Character dummyCharacter2test6 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Mage);
+            Character dummyCharacter3test6 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Undead);
+            Character dummyCharacter4test6 = new Character("test2char1", 5, Erarity.Rare, 3, 1, EAffinity.Undead);
+
+            Assert.AreEqual(2, dummyCharacter1test6.EquipItem(test6equip1).Rp);
+            Assert.AreEqual(2, dummyCharacter2test6.EquipItem(test6equip2).Rp);
+            Assert.AreEqual(2, dummyCharacter3test6.EquipItem(test6equip3).Rp);
+
+            Assert.AreEqual(1, dummyCharacter4test6.EquipItem(test6equip4).Rp);
 
         }
 
         [Test]
-        public void Test
+        public void TestSupportSkillEffect()
+        {
+
+        }
     }
 }
